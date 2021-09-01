@@ -15,7 +15,7 @@ from data import get_training_set, get_test_set
 # Training settings
 parser = argparse.ArgumentParser(description='pix2pix-pytorch-implementation')
 parser.add_argument('--dataset', required=True, help='facades')
-parser.add_argument('--batch_size', type=int, default=1, help='training batch size')
+parser.add_argument('--batch_size', type=int, default=16, help='training batch size')
 parser.add_argument('--test_batch_size', type=int, default=1, help='testing batch size')
 parser.add_argument('--direction', type=str, default='b2a', help='a2b or b2a')
 parser.add_argument('--input_nc', type=int, default=3, help='input image channels')
@@ -30,7 +30,7 @@ parser.add_argument('--lr_policy', type=str, default='lambda', help='learning ra
 parser.add_argument('--lr_decay_iters', type=int, default=50, help='multiply by a gamma every lr_decay_iters iterations')
 parser.add_argument('--beta1', type=float, default=0.5, help='beta1 for adam. default=0.5')
 parser.add_argument('--cuda', action='store_true', help='use cuda?')
-parser.add_argument('--threads', type=int, default=4, help='number of threads for data loader to use')
+parser.add_argument('--threads', type=int, default=0, help='number of threads for data loader to use')
 parser.add_argument('--seed', type=int, default=123, help='random seed to use. Default=123')
 parser.add_argument('--lamb', type=int, default=10, help='weight on L1 term in objective')
 opt = parser.parse_args()

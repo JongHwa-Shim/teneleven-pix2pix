@@ -11,12 +11,12 @@ from utils import is_image_file, load_img, save_img
 parser = argparse.ArgumentParser(description='pix2pix-pytorch-implementation')
 parser.add_argument('--dataset', required=True, help='facades')
 parser.add_argument('--direction', type=str, default='b2a', help='a2b or b2a')
-parser.add_argument('--nepochs', type=int, default=200, help='saved model of which epochs')
+parser.add_argument('--nepochs', type=int, default=100, help='saved model of which epochs')
 parser.add_argument('--cuda', action='store_true', help='use cuda')
 opt = parser.parse_args()
 print(opt)
 
-device = torch.device("cuda:0" if opt.cuda else "cpu")
+device = torch.device("cuda:1" if opt.cuda else "cpu")
 
 model_path = "checkpoint/{}/netG_model_epoch_{}.pth".format(opt.dataset, opt.nepochs)
 
